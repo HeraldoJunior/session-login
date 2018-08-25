@@ -44,16 +44,13 @@ const ManageUsers = (function () {
         window.location.href = "index.html";
     }
 
-    function del(email){
+    function del (email){
         var index = users.findIndex(u => u.email === email);
-
-        if (index > -1) {
-            users.slice(index, 1);
-            localStorage.setItem("users", JSON.stringify(users));
+        if(index > -1){
+            user = users.slice(index);
+        localStorage.setItem("users", JSON.stringify(users));
         }
-            
     }
-
     return {
         getAll: () => users,
         find: find,
